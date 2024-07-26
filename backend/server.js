@@ -1,9 +1,9 @@
-require('dotenv').config(); // load .env variables
+ require('dotenv').config(); // load .env variables
 
-const express = require('express'); // import express library
-const app = express(); // initialize express app
+const express = require('express'); 
+const app = express(); 
 
-const PORT = process.env.PORT || 3000; // set port
+const PORT = process.env.PORT || 3000; 
 
 app.use(express.json()); // Middleware to parse JSON 
 
@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 const petRoutes = require('./routes/pet-routes');
 const taskRoutes = require('./routes/task-routes');
 
-app.use('/pets', petRoutes);
-app.use('/tasks', taskRoutes);
+app.use('/api/pets', petRoutes);
+app.use('/api/tasks', taskRoutes);
 
 
 // Start Server
