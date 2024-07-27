@@ -1,26 +1,28 @@
- require('dotenv').config(); // load .env variables
+import express from "express";
+import petRoutes from "./routes/pet-routes.js";
+import taskRoutes from "./routes/task-routes.js";
+import dotenv from "dotenv";
+dotenv.config();
 
-const express = require('express'); 
-const app = express(); 
+const app = express();
 
-const PORT = process.env.PORT || 3000; 
+app.use(express.json()); // Middleware to parse JSON
 
-app.use(express.json()); // Middleware to parse JSON 
+app.use("/api/pets", petRoutes);
+app.use("/api/tasks", taskRoutes);
 
-// Test route to send Hello World response to root requests
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-  }); 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 
-// Define Routes
-const petRoutes = require('./routes/pet-routes');
-const taskRoutes = require('./routes/task-routes');
+const PORT = process.env.PORT || 3000;
 
-app.use('/api/pets', petRoutes);
-app.use('/api/tasks', taskRoutes);
-
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke, please try again later...");
+});
 
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-}); 
+});
