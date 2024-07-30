@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 1.3vw;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3.3rem;
+  font-weight: 500;
+  /* font-family: 'Inconsolata', 'Menlo', 'Roboto Mono', monospace; */
+  align-self: start;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h3 {
+  font: 1.5rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+#content {
+    display: flex;
+    min-height: 85vh;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: black;
+}
