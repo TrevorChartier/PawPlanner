@@ -1,4 +1,4 @@
-import pool from "../config/db.js";
+import pool from '../config/db.js';
 
 // IMPORTANT: YOU NEED TO HANDLE DELETING ALL OF A PETS TASKS WHEN PET IS DELETED
 
@@ -10,7 +10,7 @@ async function createTask(newTask) {
         VALUES 
             (?,?,?)
     `,
-    [newTask.title,newTask.due_date,newTask.pet_id]
+    [newTask.title, newTask.due_date, newTask.pet_id],
   );
   const id = result.insertId;
   return getTask(id);
@@ -23,7 +23,7 @@ async function getTasks() {
             * 
         FROM 
             tasks
-    `
+    `,
   );
   return rows;
 }
@@ -38,12 +38,11 @@ async function getTask(id) {
         WHERE 
             task_id = ?
     `,
-    [id]
+    [id],
   );
   return rows[0];
 }
 
-// Will have to check to see that this is returning what it should
 async function getTasksByPet(petID) {
   const [rows] = await pool.query(
     `
@@ -54,7 +53,7 @@ async function getTasksByPet(petID) {
         WHERE 
             pet_id = ?
     `,
-    [petID]
+    [petID],
   );
   return rows;
 }
@@ -71,7 +70,7 @@ async function updateTask(id, newTask) {
         WHERE 
             task_id = ?
     `,
-    [newTask.title, newTask.due_date, newTask.pet_id, id]
+    [newTask.title, newTask.due_date, newTask.pet_id, id],
   );
   const task = await getTask(id);
   return task;
@@ -86,7 +85,7 @@ async function deleteTask(id) {
         WHERE 
             task_id = ?
     `,
-    [id]
+    [id],
   );
   return task;
 }
