@@ -11,10 +11,13 @@ CREATE TABLE pets (
 CREATE TABLE tasks (
 	task_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    description TEXT,
     due_date DATE NOT NULL,
     pet_id INT NOT NULL,
     FOREIGN KEY (pet_id) REFERENCES pets(pet_id),
     INDEX idx_pet_id (pet_id)
-    )
-    
+    );
+
+INSERT INTO  pets (name)
+VALUES
+('Miles'),
+('Meena');  
