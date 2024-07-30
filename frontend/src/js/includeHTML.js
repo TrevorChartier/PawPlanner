@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', includeAllHTML);
-console.log('HI');
+
 async function includeAllHTML() {
   try {
     await includeHTML('header-placeholder', '../src/components/header.html');
