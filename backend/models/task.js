@@ -1,7 +1,5 @@
 import pool from '../config/db.js';
 
-// IMPORTANT: YOU NEED TO HANDLE DELETING ALL OF A PETS TASKS WHEN PET IS DELETED
-
 async function createTask(newTask) {
   const [result] = await pool.query(
     `
