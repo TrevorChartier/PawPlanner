@@ -13,10 +13,11 @@ CREATE TABLE tasks (
     title VARCHAR(100) NOT NULL,
     due_date DATE NOT NULL,
     pet_id INT NOT NULL,
-    FOREIGN KEY (pet_id) REFERENCES pets(pet_id),
+    FOREIGN KEY (pet_id) REFERENCES pets(pet_id) ON DELETE CASCADE,
     INDEX idx_pet_id (pet_id)
     );
 
+-- Dummy Data
 INSERT INTO  pets (name)
 VALUES
 ('Miles'),
