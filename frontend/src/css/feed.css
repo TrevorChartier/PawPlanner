@@ -1,4 +1,77 @@
-#feed{
-    background-color: white;
-    height: 100%;
+/* #7AC8AF */
+#feed {
+  width: 75vw;
+}
+
+.task-management-bar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.task-management-bar h2 {
+  margin-left: 2vw;
+}
+.add-task-button {
+  margin-right: 8vw;
+  margin-left: auto;
+}
+.add-task-button img {
+  height: 3vw;
+}
+
+#tasks-container{
+    margin-top: 2vh;
+
+}
+
+.task-box{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+    border: 3px solid black;
+}
+
+.check-box{
+    width: 40px;
+    height: 40px;
+    margin-left: 2vw;
+    border: 2px solid black;
+}
+
+.task-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.task-details{
+    display: flex;
+    gap: 0.2vw;
+}
+.task-name{
+    max-width: 35vw;  /* EXPERIMENT TO FIND RIGHT VALUE HERE */
+    white-space: nowrap;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+.pet-name{
+    max-width:15vw;
+    white-space: nowrap;
+    overflow: scroll;
+}
+.edit-task-button{
+    margin-left: auto;
+}
+.delete-task-button{
+    margin-right:2vw;
+}
+.delete-task-button img{
+    height: 3vw;
 }
